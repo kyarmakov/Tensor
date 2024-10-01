@@ -18,7 +18,7 @@ class DownloadPage(BasePage):
 
     @allure.step("Скачиваем плагин")
     def click_download_plugin(self, download_path: str):
-        BasePage._click(self._driver, By.XPATH, self._plugin_to_download)
+        BasePage._click_js(self._driver, By.XPATH, self._plugin_to_download)
 
         WebDriverWait(self._driver, EXPLICIT_WAIT_TIME).until(
             lambda driver: any(filename == DownloadPage.PLUGIN for filename in os.listdir(download_path)))

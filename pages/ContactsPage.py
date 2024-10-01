@@ -45,12 +45,12 @@ class ContactsPage(BasePage):
 
     @allure.step("Кликаем по региону")
     def click_regions(self):
-        BasePage._click(self._driver, By.XPATH, self._region)
+        BasePage._click_js(self._driver, By.XPATH, self._region)
         return self
 
     @allure.step("Выбираем новый регион")
     def click_region(self):
-        BasePage._click(self._driver, By.XPATH, self._new_region)
+        BasePage._click_js(self._driver, By.XPATH, self._new_region)
 
     @allure.step("Получаем URL")
     def get_url(self):
